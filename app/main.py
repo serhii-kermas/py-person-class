@@ -25,11 +25,11 @@ def create_person_list(people: list) -> list:
         new_people.append(new_person)
 
     for person in new_people:
-        if person.wife is not None:
+        if person.wife is not None and person.wife in Person.people:
             person.wife = Person.people[person.wife]
         else:
             del person.wife
-        if person.husband is not None:
+        if person.husband is not None and person.husband in Person.people:
             person.husband = Person.people[person.husband]
         else:
             del person.husband
